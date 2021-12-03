@@ -43,9 +43,14 @@ Copied code from MATLAB `yyaxis` function example (but give it a dark background
 ![fig1](/assets/ex1.png)
     
 ### Example 2
-Description
+Change the background to gray instead of default black. 
 
-    CODE
+    figure();
+    x = linspace(0,2*pi,100);
+    plot(x, cos(x), 'linewidth', 2, 'DisplayName','cos')
+    legend('location', 'best')
+
+    darkBackground("backColor", [0.3, 0.3, 0.3]); % gray background 
     
 ![fig2](/assets/ex2.png)
 
@@ -53,16 +58,16 @@ Description
 
 Specified optional comma-separated pairs of ```Name,Value``` arguments. ```Name``` is the is the argument name and ```Value``` is the corresponding value. ```Name``` musta ppear inside single or double quotes. You can specify several name and value pair arguments in any order as ```Name1,Value1,...,NameN,ValueN```. 
 
-**Example**: ```'name1', value1, 'name2', value2``` specifies blah blah blah.
+**Example**: ```'backColor', [0.3,0.3,0.3], 'foreColor', [0,0,1]``` specifies a figure with gray background and blue foreground.
 
-### ```name1```
-Short description (default=X)
+### ```hFigure```
+Figure handle (default=gcf())
 
-Long description
+Handle of figure you want to change to have specified background and foreground colors. 
 
-Data Types: (X, Y)
+Data Types: (figure handle)
 
-### ```value1```
+### ```backColor```
 Short description (default=X)
 
 Long description
