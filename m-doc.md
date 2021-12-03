@@ -54,6 +54,21 @@ Change the background to gray instead of default black.
     
 ![fig2](/assets/ex2.png)
 
+### Example 3
+Plot high contrasting colors. 
+
+    figure();
+    x = linspace(0,2*pi,100);
+    plot(x, cos(x), 'linewidth', 2);
+    hold on 
+    plot(x, sin(x), 'k-', 'linewidth', 2); % black is the highest contrast object color for a white background
+    
+![fig3](/assets/ex3A.png)
+
+    darkBackground()
+    
+![fig3](/assets/ex3B.png)
+
 ### Name-Value Arguments
 
 Specified optional comma-separated pairs of ```Name,Value``` arguments. ```Name``` is the is the argument name and ```Value``` is the corresponding value. ```Name``` musta ppear inside single or double quotes. You can specify several name and value pair arguments in any order as ```Name1,Value1,...,NameN,ValueN```. 
@@ -68,21 +83,39 @@ Handle of figure you want to change to have specified background and foreground 
 Data Types: (figure handle)
 
 ### ```backColor```
-Short description (default=X)
+Background color (default=\[0,0,0\])
 
-Long description
+Background color to give figure and axes. 
 
-Data Types: (X, Y)
+Data Types: (RGB triplet)
+
+### ```foreColor```
+Background color (default=\[1,1,1\])
+
+Foreground color to give figure and axes. 
+
+Data Types: (RGB triplet)
+
+### ```invert```
+Invert **necessary** colors (default=true)
+
+Whether or not to invert necessary colors of figure. This argument will check to make sure that colors that are the same as the specified [`backColor`](#backcolor) are changed to specified [`foreColor`](#forecolor). The assumptions is that if one plots an object with the highest contrast color, they will want that contrast to remain. See [Example 3](#example-3).  
+
+Data Types: (logical)
 
 ## More About 
 ---
 
+The base code comes from [Elsa Birch's](https://www.elsabirch.com/) [function](https://www.mathworks.com/matlabcentral/fileexchange/30222-quick-dark-or-custom-plot-background) on MATLAB File Exchange
+
 ## Tips 
 ---
+
+It is best to call the function once the figure is finalized. If you add more objects to the figure, they will not be updated automatically. If you do add more objects to the figure after a function call, either call the function again or make sure your objects will appear with the new colors. 
 
 ## Issues and Discussion
 ---
 
-[Issues](https://github.com/tulimid1/TASK/issues) and [Discussion](https://github.com/tulimid1/TASK/discussions).
+[Issues](https://github.com/tulimid1/darkBackground_matlab/issues) and [Discussion](https://github.com/tulimid1/darkBackground_matlab/discussions).
 
 If you don't know how to use github (or don't want to), just send me an [email](mailto:tulimid@udel.edu). 
