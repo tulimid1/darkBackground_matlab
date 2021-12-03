@@ -1,0 +1,26 @@
+{
+    "_schemaVersion": "1.0.0",
+  
+    "myFunc":
+    {
+       "inputs":
+       [
+          {"name":"in1", "kind":"required", "type":["numeric"], "purpose":"ID of item"},
+          {"name":"in2", "kind":"required", "type":["numeric"], "purpose":"# Items"},
+          {"name":"in3", "kind":"ordered", "type":["numeric"], "purpose":"Input Value"},
+          {"name":"Name1", "kind":"namevalue", "type":["logical","scalar"],"purpose":"Option"},
+          {"name":"Name2", "kind":"namevalue", "type":["char", "choices={'Default','Choice1','Choice2'}"]}
+       ]
+    },
+  
+  "darkBackground":
+  {
+      "inputs":
+      [
+          {"name":"hFigure", "kind":"namevalue", "type":["matlab.ui.Figure"], "purpose": "Figure handle (default = gcf())"},
+          {"name":"backColor", "kind":"namevalue", "type":["numeric"], "purpose":"Background RGB (default=[0,0,0]"},
+          {"name":"foreColor", "kind":"namevalue", "type":["numeric"], "purpose":"Foreground RGB (default=[1,1,1]"}, 
+          {"name":"invert", "kind":"namevalue", "type":["logical"], "purpose":"Invert objects that have same color as background (default=true"}
+      ]
+  }
+}
