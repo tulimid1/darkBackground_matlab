@@ -4,10 +4,10 @@ title: MATLAB
 permalink: /MATLAB/
 ---
 
-# [function](https://function_link.com) 
+# [darkBackground](https://github.com/tulimid1/darkBackground_matlab/blob/main/darkBackground.m) 
 ---
 
-Description. See [function_main.mlx](https://function_main.mlx) for a notebook of given examples. 
+Change figure and axes background and foreground. See [darkBackground_examples.mlx](https://github.com/tulimid1/darkBackground_matlab/blob/main/darkBackground_examples.mlx) for a notebook of given examples. 
 
 ## Syntax
 ---
@@ -18,10 +18,10 @@ Description. See [function_main.mlx](https://function_main.mlx) for a notebook o
 ## Description
 ---
 ### A
-[outarg](#outarg) = function([inarg1](#inarg1), [inarg2](#inarg2)) returns a ... . [example](#example-1)
+function([inarg1](#inarg1), [inarg2](#inarg2)) returns a ... . [example](#example-1)
 
 ### B
-[outarg](#outarg) function([inarg1](#inarg1), [inarg2](#inarg2), [Name, Value)](#name-value-arguments) returns ... with additional options specified by one or more name-value pair arguments. For example, you can do this or that. [example](#example-2)
+function([inarg1](#inarg1), [inarg2](#inarg2), [Name, Value)](#name-value-arguments) returns ... with additional options specified by one or more name-value pair arguments. For example, you can do this or that. [example](#example-2)
 
 ## Examples 
 ---
@@ -68,18 +68,8 @@ Long description
 
 Data Types: (X, Y)
 
-### ```gridY```
+### ```value1```
 Short description (default=X)
-
-Long description
-
-Data Types: (X, Y)
-
-## Output
----
-
-## ```outarg```
-Short description
 
 Long description
 
