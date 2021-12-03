@@ -11,49 +11,43 @@ Change figure and axes background and foreground. See [darkBackground_examples.m
 
 ## Syntax
 ---
-[outarg = function(inarg1, inarg2)](#a)
+[darkBackground()](#a)
 
-[outarg = function(inarg1, inarg2, Name, Value)](#b)
+[darkBackground(Name, Value)](#b)
 
 ## Description
 ---
 ### A
-function([inarg1](#inarg1), [inarg2](#inarg2)) returns a ... . [example](#example-1)
+darkBackground() updates figure properties to have black background and white foreground. [example](#example-1)
 
 ### B
-function([inarg1](#inarg1), [inarg2](#inarg2), [Name, Value)](#name-value-arguments) returns ... with additional options specified by one or more name-value pair arguments. For example, you can do this or that. [example](#example-2)
+darkBackground([Name, Value)](#name-value-arguments) updates figure properties to have black background and white foreground with additional options specified by one or more name-value pair arguments. For example, you can specify a different background color or foreground color. [example](#example-2)
 
 ## Examples 
 ---
 ### Example 1
-Description
+Copied code from MATLAB `yyaxis` function example (but give it a dark background). 
 
-    CODE
+    x = linspace(0,10);
+    y = sin(3*x);
+    yyaxis left
+    plot(x,y)
+
+    z = sin(3*x).*exp(0.5*x);
+    yyaxis right
+    plot(x,z)
+    ylim([-150 150])
     
-![fig1](/assets/fig1M.png)
+    darkBackground()
+    
+![fig1](/assets/ex1.png)
     
 ### Example 2
 Description
 
     CODE
     
-![fig2](/assets/fig2M.png)
-
-## Input Arguments
----
-### ```inarg1```
-Short description
-
-Long description
-
-Data Types: (X, Y)
-
-### ```inarg2```
-Short description
-
-Long description
-
-Data Types: (X, Y)
+![fig2](/assets/ex2.png)
 
 ### Name-Value Arguments
 
