@@ -106,7 +106,7 @@ Data Types: (logical)
 ## More About 
 ---
 
-The base code comes from [Elsa Birch's](https://www.elsabirch.com/) [function](https://www.mathworks.com/matlabcentral/fileexchange/30222-quick-dark-or-custom-plot-background) on MATLAB File Exchange
+This is a more comprehensive function based off of [Elsa Birch's](https://www.elsabirch.com/) [function](https://www.mathworks.com/matlabcentral/fileexchange/30222-quick-dark-or-custom-plot-background) on MATLAB File Exchange. 
 
 ## Tips 
 ---
