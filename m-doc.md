@@ -103,6 +103,21 @@ Whether or not to invert necessary colors of figure. This argument will check to
 
 Data Types: (logical)
 
+### `patchasBack`
+Invert the patch that is used as the axis background (default = false). 
+
+Some plotting functions use patch as the axis background. For these plot types, you need to specify this as true to get the "background" to be the correct color. 
+
+The following plotting functions use a patch as the background:
+
+    compass
+    
+    ezpolar
+    
+    waterfall
+    
+Data Types: (logical)
+
 ## More About 
 ---
 
