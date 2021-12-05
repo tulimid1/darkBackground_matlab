@@ -128,6 +128,10 @@ This is a more comprehensive function based off of [Elsa Birch's](https://www.el
 
 It is best to call the function once the figure is finalized. If you add more objects to the figure, they will not be updated automatically. If you do add more objects to the figure after a function call, either call the function again or make sure your objects will appear with the new colors. 
 
+I would suggest adding both `darkBackground.m` and `functionSignatures.json` to a folder that is in your MATLAB path. The `darkBackground.m` contains the function and the `functionSignatures.json` will you give custom suggestions and code completion for when you call `darkBackground` in a script or notebook. 
+
+If you already have a `functionSignatures.json` file in your folder, just add the pertinent code to the original `functionSignatures.json`. 
+
 ## Issues and Discussion
 ---
 
