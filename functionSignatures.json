@@ -20,7 +20,8 @@
           {"name":"hFigure", "kind":"namevalue", "type":["matlab.ui.Figure"], "purpose": "Figure handle (default = gcf())"},
           {"name":"backColor", "kind":"namevalue", "type":["numeric"], "purpose":"Background RGB (default=[0,0,0]"},
           {"name":"foreColor", "kind":"namevalue", "type":["numeric"], "purpose":"Foreground RGB (default=[1,1,1]"}, 
-          {"name":"invert", "kind":"namevalue", "type":["logical"], "purpose":"Invert objects that have same color as background (default=true"}
+          {"name":"invert", "kind":"namevalue", "type":["logical"], "purpose":"Invert objects that have same color as background (default=true"},
+          {"name":"patchasBack", "kind":"namevalue", "type":["logical"], "purpose":"Patch is background (default=false"}
       ]
   }
 }

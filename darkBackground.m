@@ -20,11 +20,12 @@ addParameter(p, 'hFigure', gcf(), @(x) strcmpi(class(x), 'matlab.ui.Figure'));
 addParameter(p, 'backColor', [0,0,0], rgbValid);
 addParameter(p, 'foreColor', [1,1,1], rgbValid);
 addParameter(p, 'invert', true, @islogical); 
+addParameter(p, 'patchasBack', false, @islogical); 
 parse(p, varargin{:});
 
 % run function that recolors all relevent children in hierarchy of hFigure
 recolorChildren(p.Results.hFigure,p.Results.backColor,p.Results.foreColor, ...
-    p.Results.invert)
+    p.Results.invert, p.Results.patchasBack)
 
 end
 
@@ -32,7 +33,7 @@ end
 % - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
 % recolorChildren (Contains main functionality of darkBackground.m)
-function [] = recolorChildren(hObject,backColor,foreColor, invert)
+function [] = recolorChildren(hObject,backColor,foreColor, invert, patchasBack)
 
 % find all handles, including those that are hiddn of all children in the
 % hierarchy under hObject
@@ -50,7 +51,7 @@ for iChild = 1:length(hChild)
             % Test axes tag since legends are also axes type, but require
             % differnt recoloring steps
             tagAxes = get(hChild(iChild),'Tag');
-            if isempty(tagAxes)
+            if isempty(tagAxes) || strcmpi(tagAxes, 'plotmatrixscatterax')
                 % Color: Color of the axes back planes. ({none} | ColorSpec)
                 set(hChild(iChild),'Color','none')
 
@@ -123,10 +124,17 @@ for iChild = 1:length(hChild)
                 end
             end
         case 'patch'
-            if invert
+            if invert 
                 if isnumeric(get(hChild(iChild), 'facecolor'))
                     if sum(get(hChild(iChild), 'facecolor') == backColor) == 3
                         set(hChild(iChild), 'facecolor', foreColor)
+                    end
+                end
+            end
+            if patchasBack 
+                if isnumeric(get(hChild(iChild), 'facecolor'))
+                    if sum(get(hChild(iChild), 'facecolor') == foreColor) == 3
+                        set(hChild(iChild), 'facecolor', backColor)
                     end
                 end
             end
@@ -136,6 +144,30 @@ for iChild = 1:length(hChild)
                     set(hChild(iChild), 'color', foreColor)
                 end
             end
+        case 'stackedplot'
+            % object doesn't have pertinent color properties (2020b)
+        case 'scatterhistogram'
+%             hChild(iChild).Color = foreColor;
+            % object doesn't have pertinent color properties (2020b)
+        case 'parallelplot'
+%             hChild(iChild).Color = foreColor; 
+            % object doesn't have pertinent color properties (2020b)
+        case 'geoaxes'
+            hChild(iChild).AxisColor = foreColor;  
+        case 'geobubble'
+            % bubblecolorlist: color of bubbles 
+            % colordata: categorical (??)
+        case 'polaraxes'
+            hChild(iChild).Color = backColor; 
+            % grid lines 
+            if strcmpi(hChild(iChild).RGrid, 'on') || ...
+                    strcmpi(hChild(iChild).ThetaGrid, 'on') 
+                set(hChild(iChild), 'GridColor', foreColor); 
+                set(hChild(iChild), 'MinorGridColor', foreColor); 
+            end
+            hChild(iChild).RColor = foreColor; 
+            hChild(iChild).ThetaColor = foreColor; 
+            
     end % switch typeChild
 
 end % for 
