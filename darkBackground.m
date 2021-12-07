@@ -167,6 +167,8 @@ for iChild = 1:length(hChild)
             end
             hChild(iChild).RColor = foreColor; 
             hChild(iChild).ThetaColor = foreColor; 
+        case 'boxchart'
+            hChild(iChild).WhiskerLineColor = foreColor;
             
     end % switch typeChild
 
